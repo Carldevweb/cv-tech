@@ -1,1 +1,68 @@
-/* You can add global styles to this file, and also import other style files */
+:root {
+    --cv-primary: #5f98a6;
+    /* bleu canard */
+    --cv-primary-2: #7fb0bd;
+    /* variante plus claire */
+    --cv-bg: #f5f7f8;
+    /* fond */
+    --cv-card: #ffffff;
+    /* cartes */
+    --cv-border: #dfe7ea;
+    /* bordures */
+    --cv-text: #0f172a;
+    /* texte principal */
+    --cv-muted: #475569;
+    /* texte secondaire */
+    --cv-soft: #eef4f6;
+    /* chips / tags light */
+}
+
+html,
+body {
+    height: 100%;
+}
+
+body {
+    margin: 0;
+    background: #f6f7fb;
+}
+
+@media print {
+    @page {
+        size: A4;
+        margin: 12mm;
+    }
+
+    html,
+    body {
+        background: #fff !important;
+    }
+
+    body {
+        -webkit-print-color-adjust: exact;
+        print-color-adjust: exact;
+    }
+
+    .no-print {
+        display: none !important;
+    }
+
+
+    h1,
+    h2,
+    h3 {
+        break-after: avoid-page;
+        page-break-after: avoid;
+    }
+
+    .card,
+    .item,
+    .block {
+        break-inside: avoid;
+        page-break-inside: avoid;
+    }
+
+    * {
+        box-shadow: none !important;
+    }
+}

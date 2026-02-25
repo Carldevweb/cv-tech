@@ -1,0 +1,89 @@
+:host {
+    display: block;
+}
+
+/* Shell */
+.shell {
+    min-height: 100vh;
+    display: grid;
+    grid-template-rows: auto 1fr auto;
+    background: var(--cv-bg);
+    color: var(--cv-text);
+    font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
+}
+
+/* Container (écran) */
+.container {
+    max-width: 1100px;
+    margin: 0 auto;
+    padding: 16px;
+}
+
+/* Header */
+.shell__header {
+    background: var(--cv-card);
+    border-bottom: 1px solid var(--cv-border);
+
+    .container {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        gap: 12px;
+    }
+}
+
+.brand__title {
+    font-weight: 800;
+    letter-spacing: 0.2px;
+    color: var(--cv-primary);
+}
+
+.brand__sub {
+    font-size: 13px;
+    color: var(--cv-muted);
+}
+
+/* Bouton */
+.btn {
+    border: 1px solid var(--cv-border);
+    background: var(--cv-card);
+    color: var(--cv-text);
+    padding: 8px 12px;
+    border-radius: 10px;
+    cursor: pointer;
+}
+
+.btn:hover {
+    border-color: var(--cv-primary-2);
+}
+
+/* Main */
+.shell__main {
+    padding: 12px 0 14px;
+}
+
+/* Footer */
+.shell__footer {
+    border-top: 1px solid var(--cv-border);
+    background: var(--cv-card);
+    color: var(--cv-muted);
+    font-size: 13px;
+}
+
+/* ===== A4 preview (optionnel) =====
+   Si tu veux prévisualiser une largeur A4 à l’écran, décommente. */
+/*
+@media (min-width: 900px) {
+  .container {
+    max-width: 210mm;
+  }
+}
+*/
+
+/* Print */
+@media print {
+    .container {
+        max-width: 210mm;
+        padding: 0;
+    }
+}

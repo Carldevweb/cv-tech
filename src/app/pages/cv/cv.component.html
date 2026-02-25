@@ -1,0 +1,96 @@
+<section class="card hero hero--photo">
+    <div class="hero__left">
+        <h1>{{ cv.identity.firstName }} {{ cv.identity.lastName }}</h1>
+        <p class="subtitle">{{ cv.identity.role }}</p>
+
+        <!-- Attention: l'email contient "@", mais ici c'est dans une variable TS, donc aucun souci -->
+        <p class="meta">
+            {{ cv.identity.location }} • {{ cv.identity.email }} • {{ cv.identity.phone }}
+        </p>
+
+        <div class="links">
+            @for (l of cv.identity.links; track l.url) {
+            <a class="link" [href]="l.url" target="_blank" rel="noopener noreferrer">
+                {{ l.label }}
+            </a>
+            }
+        </div>
+    </div>
+
+    <div class="hero__right">
+        <img [src]="cv.identity.photoUrl" alt="Photo de profil" class="profile-img" />
+    </div>
+</section>
+
+<div class="grid">
+    <section class="card">
+        <h2>Profil</h2>
+        <p>{{ cv.profile }}</p>
+    </section>
+
+    <section class="card">
+        <h2>Compétences clés</h2>
+        <ul>
+            @for (s of cv.keySkills; track s) {
+            <li>{{ s }}</li>
+            }
+        </ul>
+    </section>
+
+    <section class="card span-2">
+        <h2>Projet principal</h2>
+
+        <div class="block">
+            <div class="block__title">{{ cv.mainProject.title }}</div>
+            <ul>
+                @for (b of cv.mainProject.bullets; track b) {
+                <li>{{ b }}</li>
+                }
+            </ul>
+        </div>
+    </section>
+
+    <section class="card span-2">
+        <h2>Expérience</h2>
+
+        <div class="timeline">
+            @for (e of cv.experiences; track e.period + e.title) {
+            <div class="item">
+                <div class="item__date">{{ e.period }}</div>
+
+                <div class="item__content">
+                    <div class="item__title">{{ e.company }} — {{ e.title }}</div>
+
+                    @if (e.stack?.length) {
+                    <div class="item__desc">{{ e.stack!.join(' • ') }}</div>
+                    }
+
+                    <ul>
+                        @for (b of e.bullets; track b) {
+                        <li>{{ b }}</li>
+                        }
+                    </ul>
+                </div>
+            </div>
+            }
+        </div>
+    </section>
+
+    <section class="card">
+        <h2>Formation</h2>
+        <ul>
+            @for (ed of cv.education; track ed.year + ed.title) {
+            <li>{{ ed.year }} — {{ ed.title }} ({{ ed.school }})</li>
+            }
+        </ul>
+    </section>
+
+    <section class="card">
+        <h2>Soft skills</h2>
+        <div class="chips">
+            @for (s of cv.softSkills; track s) {
+            <span class="chip">{{ s }}</span>
+            }
+        </div>
+    </section>
+</div>
