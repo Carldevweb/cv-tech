@@ -1,0 +1,37 @@
+<section class="cv-tools">
+    <div class="cv-tools__title">{{ data.title }}</div>
+
+    <div class="cv-tools__list">
+        @for (card of data.cards; track card.tag) {
+        <article class="cv-toolcard" [class.cv-toolcard--lang]="card.type === 'languages'">
+            <div class="cv-toolcard__tag" [class.cv-toolcard__tag--lang]="card.type === 'languages'">
+                <span class="cv-toolcard__tagtext" [class.cv-toolcard__tagtext--lang]="card.type === 'languages'">
+                    {{ card.tag }}
+                </span>
+            </div>
+
+            @if (card.type === 'icons') {
+            <div class="cv-toolcard__icons">
+                @for (it of card.items; track it.label) {
+                <div class="cv-toolcard__box" title="{{ it.label }}">
+                    <img class="cv-toolcard__icon" [src]="it.iconUrl" alt="{{ it.label }}"
+                        (error)="onImgError($event)" />
+                </div>
+                }
+            </div>
+            }
+
+            @if (card.type === 'languages') {
+            <div class="cv-toolcard__langs">
+                @for (it of card.items; track it.label) {
+                <div class="cv-langrow">
+                    <img class="cv-langrow__flag" [src]="it.flagUrl" alt="Drapeau" (error)="onImgError($event)" />
+                    <span class="cv-langrow__text">{{ it.label }}</span>
+                </div>
+                }
+            </div>
+            }
+        </article>
+        }
+    </div>
+</section>

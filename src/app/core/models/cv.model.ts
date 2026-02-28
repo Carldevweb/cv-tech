@@ -1,41 +1,72 @@
-export type CvLink = {
-    label: string;
-    url: string;
-};
+/* =========================
+   HEADER
+========================= */
+export interface CvHeader {
+  fullName: string;
+  role: string;
+  greeting: string;
+  photoUrl: string;
 
-export type CvExperience = {
-    period: string;
-    title: string;
-    company: string;
-    stack?: string[];
-    bullets: string[];
-};
+  softSkillsTitle: string;
+  softSkills: string[];
+}
 
-export type CvEducation = {
-    year: string;
-    title: string;
-    school: string;
-};
+/* =========================
+   EXPERIENCE
+========================= */
+export interface CvExperience {
+  period: string;
+  title: string;
+  context: string;
+  badge?: string;
+  logoUrl?: string;
+  highlights: string[];
+}
 
-export type CvData = {
-    identity: {
-        firstName: string;
-        lastName: string;
-        role: string;
-        location: string;
-        email: string;
-        phone: string;
-        photoUrl: string;
-        tags: string[];
-        links: CvLink[];
-    };
-    profile: string;
-    keySkills: string[];
-    mainProject: {
-        title: string;
-        bullets: string[];
-    };
-    experiences: CvExperience[];
-    education: CvEducation[];
-    softSkills: string[];
-};
+/* =========================
+   TOOLS (union type propre)
+========================= */
+export type CvToolCardType = 'icons' | 'languages';
+
+export interface CvToolIconItem {
+  label: string;
+  iconUrl: string;
+}
+
+export interface CvToolLanguageItem {
+  label: string;
+  flagUrl: string;
+}
+
+export interface CvToolCardBase {
+  tag: string;
+  type: CvToolCardType;
+}
+
+/** Carte d'icônes (Back end / Front end / BDD / etc.) */
+export interface CvToolIconsCard extends CvToolCardBase {
+  type: 'icons';
+  items: CvToolIconItem[];
+}
+
+/** Carte langues (drapeaux + texte) */
+export interface CvToolLanguagesCard extends CvToolCardBase {
+  type: 'languages';
+  items: CvToolLanguageItem[];
+}
+
+export type CvToolCard = CvToolIconsCard | CvToolLanguagesCard;
+
+export interface CvToolsBox {
+  title: string;
+  cards: CvToolCard[];
+}
+
+/* =========================
+   ROOT
+========================= */
+export interface CvData {
+  header: CvHeader;
+  experiences: CvExperience[];
+  tools: CvToolsBox;
+}

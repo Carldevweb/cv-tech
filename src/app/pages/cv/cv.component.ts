@@ -1,16 +1,25 @@
 import { Component } from '@angular/core';
 import { CommonModule } from '@angular/common';
+
 import { CV_DATA } from '../../core/data/cv.data';
+import { CvData } from '../../core/models/cv.model';
+
+import { CvHeaderComponent } from '../../sections/header/header.component';
+import { CvExperienceComponent } from '../../sections/experience/experience.component';
+import { CvToolsComponent } from '../../sections/tools/tools.component';
 
 @Component({
-  selector: 'app-cv-page',
+  selector: 'app-cv',
   standalone: true,
-  imports: [CommonModule],
+  imports: [
+    CommonModule,
+    CvHeaderComponent,
+    CvExperienceComponent,
+    CvToolsComponent,
+  ],
   templateUrl: './cv.component.html',
-  styleUrl: './cv.component.scss',
+  styleUrls: ['./cv.component.scss'],
 })
-export class CvPageComponent {
-
-  cv = CV_DATA;
-
+export class CvComponent {
+  cv: CvData = CV_DATA;
 }

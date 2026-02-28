@@ -1,283 +1,82 @@
-/* =========================
-   CV PAGE (SCREEN)
-   ========================= */
+  /* cv.component.scss (parent) */
+  /* =========================
+    CV – FRAME GLOBAL (Figma)
+    595 x 914
+    padding 24/20
+    bg #EFEFEF
+  ========================= */
 
-.cv {
-    display: grid;
-    gap: 14px;
-}
+  .cv-frame {
+    width: 595px;
+    min-height: 914px;
+    margin: 0 auto;
+    background: #efefef;
+    padding: 24px 20px;
+    box-sizing: border-box;
+  }
 
-.card {
-    background: #ffffff;
-    border-radius: 6px;
-    padding: 18px;
-    border: 1px solid #e3e8ec;
-}
+  /* Box-sizing uniquement sur le parent. Le reste doit être géré dans chaque composant via :host */
+  .cv-frame {
+    box-sizing: border-box;
+  }
 
-h1 {
-    font-size: 30px;
-    font-weight: 800;
-    color: var(--cv-text);
-    margin: 0;
-}
-
-.subtitle {
-    color: var(--cv-primary);
-    font-weight: 700;
-    margin: 6px 0 0;
-}
-
-.meta {
-    margin: 8px 0 0;
-    color: #6b7280;
-    font-size: 13px;
-}
-
-h2 {
-    color: var(--cv-primary);
-    font-weight: 700;
-    margin: 0 0 10px;
-    font-size: 15px;
-}
-
-ul {
-    margin: 6px 0 0;
-    padding-left: 18px;
-}
-
-ul li {
-    margin-bottom: 4px;
-}
-
-ul li::marker {
-    color: var(--cv-primary);
-}
-
-/* HERO */
-.hero {
-    display: grid;
-    grid-template-columns: 1.4fr 1fr;
-    gap: 14px;
-    align-items: center;
-}
-
-/* Variante avec photo (corporate) */
-.hero--photo {
-    grid-template-columns: 1fr 140px;
-    gap: 20px;
-    align-items: start;
-}
-
-.profile-img {
-    width: 90px;
-    height: 120px;
-    object-fit: cover;
-    border-radius: 4px;
-    border: 1px solid var(--cv-border);
-    justify-self: end;
-    background: #fff;
-}
-
-/* TAGS */
-.tags {
+  /* Layout interne : gère les espacements */
+  .cv-layout {
     display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-    margin-top: 10px;
+    flex-direction: column;
+    gap: 10px;
+    /* Figma gap */
+  }
+
+  /* Top doit prendre toute la largeur */
+  .cv-top {
+    width: 100%;
+  }
+
+  .cv-top>app-cv-header {
+    display: block;
+    width: 100%;
+  }
+
+  /* ====== BODY (2 colonnes) ======
+    Figma exact : 411 + 20 + 124 = 555 (595 - 40 padding)
+  */
+.cv-body {
+  display: grid;
+  grid-template-columns: 411px 124px;
+  column-gap: 20px;
+  align-items: start;
 }
 
-.tag {
-    background: #eef2ff;
-    border: 1px solid #e0e7ff;
-    padding: 6px 10px;
-    border-radius: 999px;
-    font-size: 13px;
+.cv-body > app-cv-experience,
+.cv-body > app-cv-tools {
+  display: block;
+  min-width: 0;
 }
 
-/* GRID (2 colonnes) */
-.grid {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 14px;
-}
+  /* Recommandé : évite les débordements de la colonne gauche */
+  .cv-body>app-cv-experience {
+    min-width: 0;
+  }
 
-.span-2 {
-    grid-column: 1 / -1;
-}
+  /* Recommandé : évite les débordements de la colonne droite */
+  .cv-body>app-cv-tools {
+    min-width: 0;
+  }
 
-/* CONTENT */
-.block__title {
-    font-weight: 700;
-    margin-bottom: 8px;
-}
-
-/* TIMELINE */
-.timeline {
-    display: grid;
-    gap: 12px;
-}
-
-.item {
-    display: grid;
-    grid-template-columns: 80px 1fr;
-    gap: 12px;
-    padding-top: 12px;
-    border-top: 1px solid #f1f5f9;
-}
-
-.item:first-child {
-    border-top: 0;
-    padding-top: 0;
-}
-
-.item__date {
-    color: #6b7280;
-    font-size: 13px;
-}
-
-.item__title {
-    font-weight: 700;
-}
-
-.item__desc {
-    color: #4b5563;
-    font-size: 13px;
-}
-
-/* CHIPS */
-.chips {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 8px;
-}
-
-.chip {
-    background: #f3f4f6;
-    padding: 6px 10px;
-    border-radius: 999px;
-    font-size: 13px;
-}
-
-/* Responsive */
-@media (max-width: 900px) {
-    .hero {
-        grid-template-columns: 1fr;
+  /* =========================
+    Responsive
+  ========================= */
+  @media (max-width: 650px) {
+    .cv-frame {
+      width: 100%;
+      min-height: auto;
     }
 
-    .hero--photo {
-        grid-template-columns: 1fr;
+    .cv-body {
+      grid-template-columns: 1fr;
+      column-gap: 0;
+      row-gap: 12px;
+      align-items: start;
     }
-
-    .profile-img {
-        justify-self: start;
-    }
-
-    .grid {
-        grid-template-columns: 1fr;
-    }
-
-    .span-2 {
-        grid-column: auto;
-    }
-}
-
-/* =========================
-   PRINT (A4) — garder le même layout que l’écran
-   ========================= */
-@media print {
-
-    /* Masquer header/footer de l'app (pas ceux du navigateur) */
-    .shell__header,
-    .shell__footer {
-        display: none !important;
-    }
-
-    /* Conserver la mise en page (évite le passage en 1 colonne) */
-    .grid {
-        display: grid !important;
-        grid-template-columns: 1fr 1fr !important;
-        gap: 10px !important;
-    }
-
-    .span-2 {
-        grid-column: 1 / -1 !important;
-    }
-
-    /* Conserver le hero avec photo à droite */
-    .hero.hero--photo {
-        display: grid !important;
-        grid-template-columns: 1fr 140px !important;
-        gap: 16px !important;
-        align-items: start !important;
-    }
-
-    /* Rendre l'ensemble plus compact en PDF */
-    .cv {
-        gap: 10px !important;
-    }
-
-    .card {
-        border: 1px solid #e5e7eb !important;
-        padding: 10px !important;
-        border-radius: 6px !important;
-    }
-
-    h1 {
-        font-size: 20px !important;
-    }
-
-    h2 {
-        font-size: 13px !important;
-        margin-bottom: 6px !important;
-    }
-
-    .meta {
-        font-size: 11px !important;
-    }
-
-    ul {
-        margin: 4px 0 0 !important;
-    }
-
-    .item {
-        padding-top: 8px !important;
-    }
-
-    /* Photo print */
-    .profile-img {
-        width: 80px !important;
-        height: 110px !important;
-    }
-
-    /* Éviter les coupures au milieu d'un bloc */
-    h1,
-    h2,
-    h3 {
-        break-after: avoid-page;
-        page-break-after: avoid;
-    }
-
-    .card,
-    .item,
-    .block {
-        break-inside: avoid;
-        page-break-inside: avoid;
-    }
-
-    .links {
-        margin-top: 10px;
-        display: flex;
-        gap: 12px;
-    }
-
-    .link {
-        font-size: 13px;
-        color: var(--cv-primary);
-        text-decoration: none;
-        font-weight: 600;
-    }
-
-    .link:hover {
-        text-decoration: underline;
-    }
-}
+  }

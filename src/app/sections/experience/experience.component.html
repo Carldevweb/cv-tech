@@ -1,0 +1,41 @@
+<section class="cv-exp">
+  <div class="cv-exp__title">Expérience</div>
+
+  <div class="cv-exp__list">
+    @for (xp of data; track xp.period + xp.title) {
+      <article class="cv-exp__item">
+        <div class="cv-exp__topline">
+          <div class="cv-exp__period">{{ xp.period }}</div>
+
+          @if (xp.badge) {
+            <span class="cv-badge">{{ xp.badge }}</span>
+          }
+        </div>
+
+        <div class="cv-exp__content">
+          @if (xp.logoUrl) {
+            <img
+              class="cv-exp__logo"
+              [src]="xp.logoUrl"
+              alt="Logo"
+              (error)="onLogoError($event)"
+            />
+          } @else {
+            <div class="cv-exp__logo cv-exp__logo--placeholder"></div>
+          }
+
+          <div class="cv-exp__textblock">
+            <div class="cv-exp__role">{{ xp.title }}</div>
+            <div class="cv-exp__context">{{ xp.context }}</div>
+
+            <ul class="cv-exp__highlights">
+              @for (h of xp.highlights; track h) {
+                <li>{{ h }}</li>
+              }
+            </ul>
+          </div>
+        </div>
+      </article>
+    }
+  </div>
+</section>

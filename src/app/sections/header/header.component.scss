@@ -1,0 +1,97 @@
+/* header.component.scss */
+
+:host {
+  display: block;
+}
+
+:host * {
+  box-sizing: border-box;
+}
+
+$h: 180px;
+
+.cv-header {
+  display: grid;
+  width: 100%;
+  grid-template-columns: 160px 1fr 240px;
+  column-gap: 20px;
+  align-items: stretch;
+}
+
+/* PHOTO WRAPPER */
+.cv-header__photo {
+  height: $h;
+  border-radius: 18px;
+  overflow: hidden;
+}
+
+/* IMAGE */
+.cv-header__photoImg {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* INTRO */
+.cv-header__intro {
+  height: $h;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  min-width: 0;
+}
+
+/* SOFT */
+.cv-header__soft {
+  height: $h;
+  border-radius: 18px;
+  background: #004052;
+  color: #fff;
+
+  /* Remonte le contenu (top plus petit) */
+  padding: 12px 20px 22px 20px;
+
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-start;
+  min-width: 0;
+}
+
+/* Neutralise les marges HTML par défaut (sinon ça pousse vers le bas) */
+.cv-header__softTitle {
+  margin: 0 0 8px 0;
+}
+
+.cv-header__softList {
+  margin: 0;
+  padding-left: 18px;
+}
+
+.cv-header__softList li {
+  margin: 0;
+}
+
+.cv-header__name {
+  font-size: 28px;
+  line-height: 1.2;
+  min-width: 0;
+}
+
+.cv-header__role {
+  min-width: 0;
+}
+
+/* Responsive */
+@media (max-width: 500px) {
+  .cv-header {
+    grid-template-columns: 1fr;
+    row-gap: 12px;
+  }
+
+  .cv-header__soft,
+  .cv-header__intro {
+    height: auto;
+  }
+}

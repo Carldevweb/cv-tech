@@ -1,0 +1,27 @@
+<div class="cv-header">
+  <!-- PHOTO -->
+  <div class="cv-header__photo">
+    <img class="cv-header__photoImg" [src]="data.photoUrl" alt="Photo profil" />
+  </div>
+
+  <!-- INTRO -->
+  <div class="cv-header__intro">
+    <div class="cv-header__greeting">{{ data.greeting }}</div>
+
+    <div class="cv-header__identity">
+      <div class="cv-header__name">{{ data.fullName }}</div>
+      <div class="cv-header__role">{{ data.role }}</div>
+    </div>
+  </div>
+
+  <!-- SOFT SKILLS -->
+  <div class="cv-header__soft">
+    <div class="cv-header__softTitle">{{ data.softSkillsTitle }}</div>
+
+    <ul class="cv-header__softList">
+      @for (s of data.softSkills; track s) {
+      <li>{{ s }}</li>
+      }
+    </ul>
+  </div>
+</div>
