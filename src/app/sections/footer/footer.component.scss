@@ -1,0 +1,179 @@
+:host {
+  display: block;
+  width: 100%;
+}
+
+.cv-footer {
+  width: 100%;
+  display: flex;
+  flex-direction: row;
+  justify-content: space-between;
+  gap: 12px;
+}
+
+/* ===== FORMATION ===== */
+.cv-edu {
+  width: 268px;
+  flex: 0 0 268px;
+  background: rgba(0, 96, 122, 0.46);
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cv-edu__title {
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: #0b2a31;
+}
+
+.cv-edu__grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 6px;
+}
+
+.cv-edu__card {
+  background: #fff;
+  border-radius: 10px;
+  padding: 6px;
+  display: flex;
+  flex-direction: column;
+  gap: 4px;
+}
+
+.cv-edu__card--highlight {
+  background: #022D39;
+  color: #fff;
+}
+
+.cv-edu__topbar {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+}
+
+.cv-edu__year {
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  font-size: 9px;
+  color: inherit;
+}
+
+.cv-edu__heart {
+  font-size: 9px;
+}
+
+.cv-edu__name {
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
+  font-size: 9px;
+  line-height: 1.4;
+  color: inherit;
+}
+
+.cv-edu__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 2px;
+}
+
+.cv-edu__tag {
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-size: 7px;
+  color: inherit;
+  opacity: 0.8;
+}
+
+.cv-edu__school {
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-size: 7px;
+  color: inherit;
+  margin-top: auto;
+}
+
+/* ===== EXTRA (HOBBIES + CONTACT) ===== */
+.cv-extra {
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 12px;
+}
+
+/* ===== HOBBIES ===== */
+.cv-hobbies {
+  background: rgba(0, 96, 122, 0.46);
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 8px;
+}
+
+.cv-hobbies__title {
+  font-family: Poppins, sans-serif;
+  font-weight: 700;
+  font-size: 13px;
+  color: #0b2a31;
+}
+
+.cv-hobbies__tags {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+}
+
+.cv-hobbies__tag {
+  font-family: Poppins, sans-serif;
+  font-weight: 400;
+  font-size: 9px;
+  color: #2c2c2c;
+  background: #fff;
+  border-radius: 40px;
+  padding: 3px 8px;
+}
+
+/* ===== CONTACT ===== */
+.cv-contact {
+  background: #022D39;
+  border-radius: 12px;
+  padding: 8px;
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+}
+
+.cv-contact__cta {
+  font-family: Poppins, sans-serif;
+  font-weight: 500;
+  font-size: 11px;
+  line-height: 1.4;
+  color: #fff;
+  margin: 0;
+}
+
+.cv-contact__link {
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-family: Poppins, sans-serif;
+  font-size: 9px;
+  color: #fff;
+  text-decoration: none;
+  opacity: 0.85;
+}
+
+.cv-contact__link:hover {
+  opacity: 1;
+  text-decoration: underline;
+}
+
+.cv-contact__icon {
+  font-size: 12px;
+  color: #fff;
+}

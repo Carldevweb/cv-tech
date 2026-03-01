@@ -49,6 +49,8 @@ $h: 180px;
   background: #004052;
   color: #fff;
   padding: 12px 20px 22px;
+  font-size: 13px;     
+  line-height: 1.35;
 
   display: flex;
   flex-direction: column;
@@ -58,16 +60,20 @@ $h: 180px;
 
 /* Evite les marges HTML par défaut */
 .cv-header__softTitle {
-  margin: 0 0 8px 0;
+  font-size: 14px;
+  margin: 0 0 6px 0;
 }
 
 .cv-header__softList {
   margin: 0;
   padding-left: 18px;
+  font-size: 12px;
+  line-height: 1.4;
 }
 
 .cv-header__softList li {
   margin: 0;
+  word-break: break-word;
 }
 
 .cv-header__name {

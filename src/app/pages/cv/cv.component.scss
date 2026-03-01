@@ -2,7 +2,7 @@
   width: 595px;
   min-height: 914px;
   margin: 0 auto;
-  padding: 24px 20px;
+  padding: 16px 16px;
   background: #efefef;
   box-sizing: border-box;
 }
@@ -10,7 +10,7 @@
 .cv-layout {
   display: flex;
   flex-direction: column;
-  gap: 10px;
+  gap: 8px;
 }
 
 .cv-top {
@@ -25,9 +25,9 @@
 .cv-body {
   display: grid;
   grid-template-columns: 411px 124px;
-  column-gap: 20px;
+  column-gap: 16px;
   align-items: start;
-  margin-top: 6px;
+  margin-top: 4px;
 }
 
 .cv-body > app-cv-experience {
@@ -42,6 +42,11 @@
   min-width: 0;
 }
 
+.cv-footer-row {
+  margin-top: 6px;
+  width: 100%;
+}
+
 @media (max-width: 650px) {
   .cv-frame {
     width: 100%;
@@ -51,7 +56,7 @@
   .cv-body {
     display: grid;
     grid-template-columns: 411px 124px;
-    column-gap: 20px;
+    column-gap: 16px;
     align-items: start;
   }
 

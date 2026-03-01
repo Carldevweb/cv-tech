@@ -7,6 +7,7 @@ import { CvData } from '../../core/models/cv.model';
 import { CvHeaderComponent } from '../../sections/header/header.component';
 import { CvExperienceComponent } from '../../sections/experience/experience.component';
 import { CvToolsComponent } from '../../sections/tools/tools.component';
+import { CvFooterComponent } from '../../sections/footer/footer.component';
 
 @Component({
   selector: 'app-cv',
@@ -16,6 +17,7 @@ import { CvToolsComponent } from '../../sections/tools/tools.component';
     CvHeaderComponent,
     CvExperienceComponent,
     CvToolsComponent,
+    CvFooterComponent,
   ],
   templateUrl: './cv.component.html',
   styleUrls: ['./cv.component.scss'],

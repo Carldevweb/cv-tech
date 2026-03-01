@@ -1,0 +1,61 @@
+<div class="cv-footer">
+
+    <!-- FORMATION -->
+    <div class="cv-edu">
+        <div class="cv-edu__title">{{ data.educationTitle }}</div>
+        <div class="cv-edu__grid">
+            @for (edu of data.educations; track edu.year) {
+            <article class="cv-edu__card" [class.cv-edu__card--highlight]="edu.highlight">
+                <div class="cv-edu__topbar">
+                    <span class="cv-edu__year">{{ edu.year }}</span>
+                    @if (edu.highlight) {
+                    <span class="cv-edu__heart">🤍</span>
+                    }
+                </div>
+                <div class="cv-edu__content">
+                    <div class="cv-edu__name">{{ edu.title }}</div>
+                    @if (edu.tags) {
+                    <div class="cv-edu__tags">
+                        @for (tag of edu.tags; track tag) {
+                        <span class="cv-edu__tag">{{ tag }}</span>
+                        }
+                    </div>
+                    }
+                    <div class="cv-edu__school">{{ edu.school }}</div>
+                </div>
+            </article>
+            }
+        </div>
+    </div>
+
+    <!-- HOBBIES + CONTACT -->
+    <div class="cv-extra">
+
+        <!-- HOBBIES -->
+        <div class="cv-hobbies">
+            <div class="cv-hobbies__title">{{ data.hobbiesTitle }}</div>
+            <div class="cv-hobbies__tags">
+                @for (hobby of data.hobbies; track hobby) {
+                <span class="cv-hobbies__tag">{{ hobby }}</span>
+                }
+            </div>
+        </div>
+
+        <!-- CONTACT -->
+        <div class="cv-contact">
+            <p class="cv-contact__cta">{{ data.contact.callToAction }}</p>
+            <a class="cv-contact__link" [href]="data.contact.linkedinUrl" target="_blank">
+                <i class="devicon-linkedin-plain cv-contact__icon"></i>
+                {{ data.contact.linkedinUrl }}
+            </a>
+            <a class="cv-contact__link" [href]="'mailto:' + data.contact.email">
+                <i class="cv-contact__icon cv-contact__icon--mail">✉</i>
+                {{ data.contact.email }}
+            </a>
+            <a class="cv-contact__link" [href]="data.contact.githubUrl" target="_blank">
+                <i class="devicon-github-original cv-contact__icon"></i>
+                {{ data.contact.githubUrl }}
+            </a>
+        </div>
+    </div>
+</div>

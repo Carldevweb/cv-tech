@@ -30,8 +30,8 @@ export type CvToolCardType = 'icons' | 'languages';
 
 export interface CvToolIconItem {
   label: string;
-  iconUrl?: string;       // image locale : 'assets/icons/angular.png'
-  deviconClass?: string;  // classe devicon : 'devicon-angular-plain colored'
+  iconUrl?: string;
+  deviconClass?: string;
 }
 
 export interface CvToolLanguageItem {
@@ -62,10 +62,40 @@ export interface CvToolsBox {
 }
 
 /* =========================
+   EDUCATION
+========================= */
+export interface CvEducation {
+  year: string;
+  title: string;
+  school: string;
+  tags?: string[];
+  highlight?: boolean;
+}
+
+/* =========================
+   FOOTER
+========================= */
+export interface CvContact {
+  callToAction: string;
+  linkedinUrl: string;
+  email: string;
+  githubUrl: string;
+}
+
+export interface CvFooter {
+  educationTitle: string;
+  educations: CvEducation[];
+  hobbiesTitle: string;
+  hobbies: string[];
+  contact: CvContact;
+}
+
+/* =========================
    ROOT
 ========================= */
 export interface CvData {
   header: CvHeader;
   experiences: CvExperience[];
   tools: CvToolsBox;
+  footer: CvFooter;
 }

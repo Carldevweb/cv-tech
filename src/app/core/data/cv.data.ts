@@ -6,26 +6,34 @@ export const CV_DATA: CvData = {
     role: 'Développeur full stack junior',
     greeting: "Hello 👋🏻 I'm",
     photoUrl: 'assets/profil.jpg',
-
     softSkillsTitle: 'Soft skills',
     softSkills: [
-      "Esprit d'analyse et problem solver",
-      'Travail en équipe',
-      'Adaptable et flexible',
-      'Sens du relationnel et écoute active',
+      'Résolution de problèmes complexes',
+      'Collaboration en équipe Agile',
+      'Montée en compétences rapide',
+      'Communication technique et fonctionnelle',
     ],
   },
 
   experiences: [
     {
+      period: '2026',
+      title: 'Développeur full stack',
+      context: 'Projet personnel',
+      badge: 'most recent',
+      logoUrl: 'assets/icons/github.png',
+      highlights: [
+        "Conception d'une API REST sécurisée (JWT, rôles USER/ADMIN) avec Spring Boot 3.3 et PostgreSQL — authentification stateless, CRUD articles/catégories, upload de médias et reset de mot de passe par email.",
+        "Développement d'une SPA Angular 19 connectée via JWT — guards de routes, interceptors HTTP, gestion des rôles et UI responsive inspirée d'une maquette Figma.",
+      ],
+    },
+    {
       period: 'Juin 2024 – Sept 2024',
       title: 'Développeur full stack',
       context: 'Stagiaire de la formation',
-      badge: 'most recent',
       logoUrl: 'assets/logos/m2i.png',
       highlights: [
         "Développement d'une API REST de gestion et combats de Pokémons.",
-        'Modélisation base de données + scripts de reset et restauration.',
         'Tests et validation des endpoints via Postman (collection dédiée).',
       ],
     },
@@ -35,8 +43,7 @@ export const CV_DATA: CvData = {
       context: 'Projet en entreprise',
       logoUrl: 'assets/logos/reyouzz.png',
       highlights: [
-        "Développement d'une API REST en Python (Django).",
-        "Implémentation d'opérations CRUD connectées à PostgreSQL.",
+        "Développement d'une API REST en Python (Django) avec opérations CRUD connectées à PostgreSQL.",
         "Participation à la maintenance et à l'évolution des fonctionnalités.",
       ],
     },
@@ -46,8 +53,7 @@ export const CV_DATA: CvData = {
       context: 'Stagiaire de la formation',
       logoUrl: 'assets/logos/eni.png',
       highlights: [
-        "Développement d'une plateforme web (projet de formation) en PHP/Symfony.",
-        "Développement d'un outil de gestion (projet) en Java JEE + SQL Server.",
+        "Développement d'une plateforme web en PHP/Symfony et d'un outil de gestion en Java JEE + SQL Server.",
         'Conception orientée couches et structuration claire des composants.',
       ],
     },
@@ -108,5 +114,49 @@ export const CV_DATA: CvData = {
         ],
       },
     ],
+  },
+
+  footer: {
+    educationTitle: 'Formation',
+    educations: [
+      {
+        year: '2024',
+        title: 'Développeur Full Stack Java',
+        school: 'M2i',
+        tags: ['#Java21', '#JEE', '#Jira', '#Spring boot', '#Angular', '#Typescript', '#Docker'],
+        highlight: true,
+      },
+      {
+        year: '2022',
+        title: 'Développeur web et mobile',
+        school: 'Eni',
+        tags: ['#CSS/HTML', '#Symfony', '#PHP', '#Github', '#Java', '#méthodes Agiles', '#JEE'],
+      },
+      {
+        year: '2021',
+        title: 'L2 Philosophie',
+        school: 'Université de Nantes',
+      },
+      {
+        year: '2019',
+        title: 'DAEU Littéraire',
+        school: 'Université Paris Diderot',
+      },
+    ],
+    hobbiesTitle: 'Hobbies',
+    hobbies: [
+      'sport et bien-être',
+      "Jeu d'échecs",
+      'lecture',
+      'sorties culturelles',
+      'cinéma',
+      'voyages',
+    ],
+    contact: {
+      callToAction: "Discutons ! Je suis prêt à travailler sur des projets passionnants",
+      linkedinUrl: 'https://www.linkedin.com/in/charles-knezic/',
+      email: 'carlflahault@gmail.com',
+      githubUrl: 'https://github.com/Carldevweb',
+    },
   },
 };
