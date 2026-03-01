@@ -1,18 +1,12 @@
 <div class="cv-frame">
-  <div class="cv-layout">
-    <div class="cv-top">
-      <app-cv-header [data]="cv.header"></app-cv-header>
-    </div>
+  <div class="cv-top">
+    <app-cv-header [data]="cv.header"></app-cv-header>
+  </div>
 
-    <div class="cv-body">
-  <div class="cv-col">
-    <h3 class="cv-col__title">Expérience</h3>
+  <div class="cv-body">
     <app-cv-experience [data]="cv.experiences"></app-cv-experience>
+    <div class="cv-tools-wrapper">
+      <app-cv-tools [data]="cv.tools"></app-cv-tools>
+    </div>
   </div>
-
-  <div class="cv-col">
-    <h3 class="cv-col__title">Outils</h3>
-    <app-cv-tools [data]="cv.tools"></app-cv-tools>
-  </div>
-</div>
-</div>
+</div>  

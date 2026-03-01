@@ -1,18 +1,6 @@
 :host {
   display: block;
-  box-sizing: border-box;
   width: 100%;
-}
-
-:host * {
-  box-sizing: border-box;
-}
-
-/* Sécurité anti images trop grandes */
-:host img {
-  display: block;
-  max-width: 100%;
-  height: auto;
 }
 
 .cv-exp {
@@ -44,7 +32,7 @@
   width: 100%;
   padding: 8px;
   border-radius: 10px;
-  background: #ffffff;
+  background: #fff;
 
   display: flex;
   flex-direction: column;
@@ -52,18 +40,17 @@
 }
 
 .cv-exp__topline {
-  width: 100%;
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2px;
+  gap: 8px;
 }
 
 .cv-exp__period {
   font-family: Poppins, sans-serif;
   font-weight: 600;
   font-size: 10px;
-  line-height: 140%;
+  line-height: 1.4;
   color: #2c2c2c;
 }
 
@@ -74,11 +61,10 @@
   padding: 4px 10px;
   border-radius: 999px;
   background: #004052;
-  color: #ffffff;
+  color: #fff;
 }
 
 .cv-exp__content {
-  width: 100%;
   display: flex;
   align-items: flex-start;
   gap: 8px;
@@ -89,10 +75,8 @@
   height: 56px;
   border-radius: 10px;
   object-fit: contain;
-  background: #ffffff;
+  background: #fff;
   flex: 0 0 56px;
-  max-width: 56px;
-  max-height: 56px;
 }
 
 .cv-exp__logo--placeholder {
@@ -124,9 +108,10 @@
   color: #5c5c5c;
 }
 
+/* Liste : on reprend un padding Figma, sans marges par défaut */
 .cv-exp__highlights {
-  margin: 0;
   padding-left: 16px;
+  margin: 0;
 
   display: flex;
   flex-direction: column;
@@ -135,6 +120,11 @@
   font-family: Poppins, sans-serif;
   font-weight: 500;
   font-size: 10px;
-  line-height: 140%;
+  line-height: 1.4;
   color: #2c2c2c;
+}
+
+.cv-exp__highlights li {
+  margin: 0;
+  padding: 0;
 }

@@ -1,82 +1,69 @@
-  /* cv.component.scss (parent) */
-  /* =========================
-    CV – FRAME GLOBAL (Figma)
-    595 x 914
-    padding 24/20
-    bg #EFEFEF
-  ========================= */
+.cv-frame {
+  width: 595px;
+  min-height: 914px;
+  margin: 0 auto;
+  padding: 24px 20px;
+  background: #efefef;
+  box-sizing: border-box;
+}
 
-  .cv-frame {
-    width: 595px;
-    min-height: 914px;
-    margin: 0 auto;
-    background: #efefef;
-    padding: 24px 20px;
-    box-sizing: border-box;
-  }
+.cv-layout {
+  display: flex;
+  flex-direction: column;
+  gap: 10px;
+}
 
-  /* Box-sizing uniquement sur le parent. Le reste doit être géré dans chaque composant via :host */
-  .cv-frame {
-    box-sizing: border-box;
-  }
+.cv-top {
+  width: 100%;
+}
 
-  /* Layout interne : gère les espacements */
-  .cv-layout {
-    display: flex;
-    flex-direction: column;
-    gap: 10px;
-    /* Figma gap */
-  }
+.cv-top > app-cv-header {
+  display: block;
+  width: 100%;
+}
 
-  /* Top doit prendre toute la largeur */
-  .cv-top {
-    width: 100%;
-  }
-
-  .cv-top>app-cv-header {
-    display: block;
-    width: 100%;
-  }
-
-  /* ====== BODY (2 colonnes) ======
-    Figma exact : 411 + 20 + 124 = 555 (595 - 40 padding)
-  */
 .cv-body {
   display: grid;
   grid-template-columns: 411px 124px;
   column-gap: 20px;
   align-items: start;
+  margin-top: 6px;
 }
 
-.cv-body > app-cv-experience,
-.cv-body > app-cv-tools {
+.cv-body > app-cv-experience {
   display: block;
   min-width: 0;
 }
 
-  /* Recommandé : évite les débordements de la colonne gauche */
-  .cv-body>app-cv-experience {
+.cv-tools-wrapper {
+  display: block;
+  align-self: start;
+  height: fit-content;
+  min-width: 0;
+}
+
+@media (max-width: 650px) {
+  .cv-frame {
+    width: 100%;
+    min-height: auto;
+  }
+
+  .cv-body {
+    display: grid;
+    grid-template-columns: 411px 124px;
+    column-gap: 20px;
+    align-items: start;
+  }
+
+  .cv-body > app-cv-experience {
+    display: block;
     min-width: 0;
   }
 
-  /* Recommandé : évite les débordements de la colonne droite */
-  .cv-body>app-cv-tools {
+  .cv-tools-wrapper {
+    display: block;
+    align-self: start;
+    height: fit-content;
     min-width: 0;
   }
-
-  /* =========================
-    Responsive
-  ========================= */
-  @media (max-width: 650px) {
-    .cv-frame {
-      width: 100%;
-      min-height: auto;
-    }
-
-    .cv-body {
-      grid-template-columns: 1fr;
-      column-gap: 0;
-      row-gap: 12px;
-      align-items: start;
-    }
-  }
+}

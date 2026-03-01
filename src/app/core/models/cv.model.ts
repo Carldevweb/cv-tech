@@ -30,7 +30,8 @@ export type CvToolCardType = 'icons' | 'languages';
 
 export interface CvToolIconItem {
   label: string;
-  iconUrl: string;
+  iconUrl?: string;       // image locale : 'assets/icons/angular.png'
+  deviconClass?: string;  // classe devicon : 'devicon-angular-plain colored'
 }
 
 export interface CvToolLanguageItem {
@@ -43,13 +44,11 @@ export interface CvToolCardBase {
   type: CvToolCardType;
 }
 
-/** Carte d'icônes (Back end / Front end / BDD / etc.) */
 export interface CvToolIconsCard extends CvToolCardBase {
   type: 'icons';
   items: CvToolIconItem[];
 }
 
-/** Carte langues (drapeaux + texte) */
 export interface CvToolLanguagesCard extends CvToolCardBase {
   type: 'languages';
   items: CvToolLanguageItem[];

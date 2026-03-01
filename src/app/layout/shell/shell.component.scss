@@ -1,3 +1,5 @@
+/* Shell component styles */
+
 :host {
     display: block;
 }
@@ -6,7 +8,7 @@
 .shell {
     min-height: 100vh;
     display: grid;
-    grid-template-rows: auto 1fr auto;
+    grid-template-rows: auto auto auto; /* ← 1fr remplacé par auto */
     background: var(--cv-bg);
     color: var(--cv-text);
     font-family: system-ui, -apple-system, Segoe UI, Roboto, Arial, sans-serif;
@@ -69,16 +71,6 @@
     color: var(--cv-muted);
     font-size: 13px;
 }
-
-/* ===== A4 preview (optionnel) =====
-   Si tu veux prévisualiser une largeur A4 à l’écran, décommente. */
-/*
-@media (min-width: 900px) {
-  .container {
-    max-width: 210mm;
-  }
-}
-*/
 
 /* Print */
 @media print {

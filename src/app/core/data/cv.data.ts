@@ -4,12 +4,12 @@ export const CV_DATA: CvData = {
   header: {
     fullName: 'Charles Flahault Knezic',
     role: 'Développeur full stack junior',
-    greeting: "Hello 👋🏻 I’m",
+    greeting: "Hello 👋🏻 I'm",
     photoUrl: 'assets/profil.jpg',
 
     softSkillsTitle: 'Soft skills',
     softSkills: [
-      "Esprit d’analyse et problem solver",
+      "Esprit d'analyse et problem solver",
       'Travail en équipe',
       'Adaptable et flexible',
       'Sens du relationnel et écoute active',
@@ -24,7 +24,7 @@ export const CV_DATA: CvData = {
       badge: 'most recent',
       logoUrl: 'assets/logos/m2i.png',
       highlights: [
-        "Développement d’une API REST de gestion et combats de Pokémons.",
+        "Développement d'une API REST de gestion et combats de Pokémons.",
         'Modélisation base de données + scripts de reset et restauration.',
         'Tests et validation des endpoints via Postman (collection dédiée).',
       ],
@@ -32,12 +32,12 @@ export const CV_DATA: CvData = {
     {
       period: 'Sept 2022 – Nov 2022',
       title: 'Développeur full stack',
-      context: 'Projet en entreprise (réel)',
+      context: 'Projet en entreprise',
       logoUrl: 'assets/logos/reyouzz.png',
       highlights: [
-        "Développement d’une API REST en Python (Django).",
-        'Implémentation d’opérations CRUD connectées à PostgreSQL.',
-        'Participation à la maintenance et à l’évolution des fonctionnalités.',
+        "Développement d'une API REST en Python (Django).",
+        "Implémentation d'opérations CRUD connectées à PostgreSQL.",
+        "Participation à la maintenance et à l'évolution des fonctionnalités.",
       ],
     },
     {
@@ -46,8 +46,8 @@ export const CV_DATA: CvData = {
       context: 'Stagiaire de la formation',
       logoUrl: 'assets/logos/eni.png',
       highlights: [
-        'Développement d’une plateforme web (projet de formation) en PHP/Symfony.',
-        "Développement d’un outil de gestion (projet) en Java JEE + SQL Server.",
+        "Développement d'une plateforme web (projet de formation) en PHP/Symfony.",
+        "Développement d'un outil de gestion (projet) en Java JEE + SQL Server.",
         'Conception orientée couches et structuration claire des composants.',
       ],
     },
@@ -60,42 +60,53 @@ export const CV_DATA: CvData = {
         type: 'icons',
         tag: 'Back end',
         items: [
-          { label: 'Java', iconUrl: 'assets/icons/java.svg' },
-          { label: 'Spring', iconUrl: 'assets/icons/spring.svg' },
-          { label: 'REST', iconUrl: 'assets/icons/rest.svg' },
+          { label: 'Java', deviconClass: 'devicon-java-plain colored' },
+          { label: 'Spring', deviconClass: 'devicon-spring-plain colored' },
+          { label: 'PHP', deviconClass: 'devicon-php-plain colored' },
+          { label: 'Symfony', deviconClass: 'devicon-symfony-plain' },
+          { label: 'Django', deviconClass: 'devicon-django-plain colored' },
+          { label: 'Maven', iconUrl: 'assets/icons/maven.png' },
         ],
       },
       {
         type: 'icons',
         tag: 'Front end',
         items: [
-          { label: 'HTML', iconUrl: 'assets/icons/html5.svg' },
-          { label: 'Angular', iconUrl: 'assets/icons/angular.png' },
-          { label: 'Figma', iconUrl: 'assets/icons/figma.svg' },
+          { label: 'HTML', deviconClass: 'devicon-html5-plain colored' },
+          { label: 'CSS', deviconClass: 'devicon-css3-plain colored' },
+          { label: 'JavaScript', deviconClass: 'devicon-javascript-plain colored' },
+          { label: 'Bootstrap', deviconClass: 'devicon-bootstrap-plain colored' },
+          { label: 'Angular', deviconClass: 'devicon-angularjs-plain colored' },
+          { label: 'React', deviconClass: 'devicon-react-original colored' },
         ],
       },
       {
         type: 'icons',
         tag: 'BDD',
         items: [
-          { label: 'PostgreSQL', iconUrl: 'assets/icons/postgresql.png' },
+          { label: 'PostgreSQL', deviconClass: 'devicon-postgresql-plain colored' },
+          { label: 'MySQL', deviconClass: 'devicon-mysql-plain colored' },
         ],
       },
       {
         type: 'icons',
         tag: 'Outils',
         items: [
-          { label: 'Git', iconUrl: 'assets/icons/git.svg' },
-          { label: 'Postman', iconUrl: 'assets/icons/postman.svg' },
+          { label: 'GitHub', deviconClass: 'devicon-github-original' },
+          { label: 'Docker', deviconClass: 'devicon-docker-plain colored' },
+          { label: 'Jira', deviconClass: 'devicon-jira-plain colored' },
+          { label: 'Figma', deviconClass: 'devicon-figma-plain colored' },
+          { label: 'Maven', iconUrl: 'assets/icons/maven.png' },
         ],
       },
       {
         type: 'languages',
         tag: 'langues',
         items: [
-          { label: 'Natif', flagUrl: 'assets/flags/france.png' },
-          { label: 'Bilingue', flagUrl: 'assets/flags/royaume-uni.png' },
+          { label: 'Natif', flagUrl: 'assets/icons/france.png' },
+          { label: 'Bilingue', flagUrl: 'assets/icons/royaume-uni.svg' },
         ],
       },
     ],
-  },};
+  },
+};

@@ -1,68 +1,80 @@
 :root {
-    --cv-primary: #5f98a6;
-    /* bleu canard */
-    --cv-primary-2: #7fb0bd;
-    /* variante plus claire */
-    --cv-bg: #f5f7f8;
-    /* fond */
-    --cv-card: #ffffff;
-    /* cartes */
-    --cv-border: #dfe7ea;
-    /* bordures */
-    --cv-text: #0f172a;
-    /* texte principal */
-    --cv-muted: #475569;
-    /* texte secondaire */
-    --cv-soft: #eef4f6;
-    /* chips / tags light */
+  --cv-primary: #5f98a6;
+  --cv-primary-2: #7fb0bd;
+  --cv-bg: #f5f7f8;
+  --cv-card: #ffffff;
+  --cv-border: #dfe7ea;
+  --cv-text: #0f172a;
+  --cv-muted: #475569;
+  --cv-soft: #eef4f6;
+}
+
+/* Reset layout indispensable (évite les doublons dans chaque composant) */
+*,
+*::before,
+*::after {
+  box-sizing: border-box;
 }
 
 html,
 body {
-    height: 100%;
+  min-height: 100%;
 }
 
 body {
-    margin: 0;
-    background: #f6f7fb;
+  margin: 0;
+  background: #f6f7fb;
+}
+
+/* Images : anti débordement global (plus besoin de :host img partout) */
+img {
+  display: block;
+  max-width: 100%;
+  height: auto;
+}
+
+/* Listes : neutralise les marges par défaut qui te décalent des blocs */
+ul,
+ol {
+  margin: 0;
+  padding: 0;
 }
 
 @media print {
-    @page {
-        size: A4;
-        margin: 12mm;
-    }
+  @page {
+    size: A4;
+    margin: 12mm;
+  }
 
-    html,
-    body {
-        background: #fff !important;
-    }
+  html,
+  body {
+    background: #fff !important;
+  }
 
-    body {
-        -webkit-print-color-adjust: exact;
-        print-color-adjust: exact;
-    }
+  body {
+    -webkit-print-color-adjust: exact;
+    print-color-adjust: exact;
+  }
 
-    .no-print {
-        display: none !important;
-    }
+  .no-print {
+    display: none !important;
+  }
 
+  h1,
+  h2,
+  h3 {
+    break-after: avoid;
+    page-break-after: avoid;
+  }
 
-    h1,
-    h2,
-    h3 {
-        break-after: avoid-page;
-        page-break-after: avoid;
-    }
+  .card,
+  .item,
+  .block {
+    break-inside: avoid;
+    page-break-inside: avoid;
+  }
 
-    .card,
-    .item,
-    .block {
-        break-inside: avoid;
-        page-break-inside: avoid;
-    }
-
-    * {
-        box-shadow: none !important;
-    }
+  * {
+    box-shadow: none !important;
+  }
 }
